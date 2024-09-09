@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organisasi atau Koperasi Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scroll when menu is open */
+        }
+
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 98.5%;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            z-index: 1000;
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            min-height: 10px;
+            max-height: 50px;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+            margin-left: 10px; /* Tambahkan sedikit jarak antara hamburger dan logo */
+        }
+
+        .top-nav-links {
+            margin: 10px;
+        }
+        .top-nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 15px;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        .top-nav-links a:hover {
+            background-color: #444;
+        }
+
+        .hamburger {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        /* .hamburger.active {
+            background-color: #555;
+        } */
+
+        .bar {
+            width:40px;
+            height: 3px;
+            border-radius: 5px;
+            background-color: #fff;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active .bar:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 12.5px);
+        }
+
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+            width: 20px;
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -12.5px);
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0px; /* Start hidden off-screen */
+            height: 100%;
+            width: 250px;
+            background-color: #535353;
+            color: #fff;
+            padding: 79px 20px;
+            transition: transform 0.3s ease;
+            transform: translateX(-100%);
+            z-index: 999;
+            overflow-y: auto; /* Ensure scroll if needed */
+        }
+
+        .sidebar.show {
+            transform: translateX(0); /* Slide in */
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 15px;
+            font-size: 18px;
+        }
+
+        .sidebar a:hover {
+            background-color: #444;
+            border-radius: 10px;
+        }
+
+        .search-input {
+            display: block;
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 20px 0;
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        .content {
+            padding: 50px;
+            transition: margin-left 0.3s ease; /* Smooth page shift */
+        }
+
+        .content-with-sidebar {
+            margin-left: 290px; /* Adjust for the sidebar width */
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <div class="nav-left">
+            <button class="hamburger" onclick="toggleSidebar()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+            <img src="../../Gambar/Logo Wiranusa.png" class="logo" alt="Logo">
+        </div>
+        <div class="top-nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div id="sidebar" class="sidebar">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search...">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+    <div id="content" class="content">
+        <div class="header">
+            <h1>Welcome to Our Organization</h1>
+            <p>Your trusted partner in [Your Field]</p>
+        </div>
+        <div class="section">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac venenatis arcu. Proin quis gravida justo.</p>
+        </div>
+        <div class="section">
+            <h2>Our Services</h2>
+            <p>We offer a range of services to meet your needs. From consulting to product development, we are here to help.</p>
+        </div>
+        <div class="section">
+            <h2>Contact Us</h2>
+            <p>For inquiries, please contact us at:</p>
+            <ul>
+                <li>Email: contact@example.com</li>
+                <li>Phone: +123 456 7890</li>
+                <li>Address: 123 Street Name, City, Country</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Your Organization. All rights reserved.</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+    </div>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const content = document.getElementById('content');
+            const hamburger = document.querySelector('.hamburger');
+            
+            sidebar.classList.toggle('show');
+            content.classList.toggle('content-with-sidebar');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

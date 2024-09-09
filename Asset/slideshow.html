@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Koperasi Wiranusa</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <style>
+        .carousel-item {
+            position: relative;
+        }
+        .carousel-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
+            z-index: 1;
+        }
+        .carousel-item img {
+            position: relative;
+            z-index: 0;
+        }
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+        }
+        /* Custom styles for carousel controls */
+        .carousel-control-prev, .carousel-control-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(to top right, rgb(0, 42, 158, 0.5), rgb(108, 255, 194, 0.5)); /* Initial background color */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 50%; /* Make the control circular */
+            color: white; /* Icon color */
+            display: flex;
+            align-items: center;    
+            justify-content: center;
+            z-index: 1000; /* Ensure controls are above other elements */
+            border: none; /* Remove default border */
+            transition: background-color 0.3s; /* Smooth transition for background color */
+        }
+        .carousel-control-prev {
+            left: 5%; /* Adjust the left position */
+        }
+        .carousel-control-next {
+            right: 5%; /* Adjust the right position */
+        }
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: transparent; /* No background for icon */
+        }
+        .carousel-control-prev-icon::before, .carousel-control-next-icon::before {
+            font-size: 24px; /* Adjust the size of the icon */
+            color: white; /* Icon color */
+        }
+        /* Hover effect for carousel controls */
+        .carousel-control-prev:hover, .carousel-control-next:hover {
+            background: linear-gradient(to top right, rgb(0, 42, 158, 1), rgb(108, 255, 194, 1)); /* Full color on hover */
+        }
+        /* Focus effect for carousel controls */
+        .carousel-control-prev:focus, .carousel-control-next:focus {
+            outline: none; /* Remove default focus outline */
+        }
+        /* Active state (clicked) effect for carousel controls */
+        .carousel-control-prev:active, .carousel-control-next:active {
+            background: linear-gradient(to top right, rgb(0, 42, 158, 0.5), rgb(108, 255, 194, 0.5)); /* Same as initial color */
+        }
+        /* Custom styles for carousel indicators */
+        .carousel-indicators button {
+          background: linear-gradient(to top right, rgb(0, 42, 158, 0.8), rgb(108, 255, 194, 0.8)); /* Background color of inactive indicators */
+          border: none; /* Remove default border */
+        }
+        .carousel-indicators .active {
+          background-color: rgb(0, 42, 158, 1); /* Background color of the active indicator */
+        }
+    </style>
+</head>
+<body>
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../Gambar/gambar1_edit.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../Gambar/gambar2_edit.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../Gambar/gambar3_edit.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../Gambar/gambar4_edit.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../Gambar/gambar5_edit.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <script src="../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h3>Visitors</h3>
+    <table>
+      <tr>
+        <th>Country</th>
+        <th>Visits</th>
+      </tr>
+      <? for (var i = 0; i < data.length; i++) { ?>
+      <tr>
+        <td><?= data[i][0] ?></td>
+        <td><?= data[i][1] ?></td>
+      </tr>
+      <? } ?>
+    </table>
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seamless Scrolling Text</title>
+    <style>
+        .scrolling-text-container {
+            overflow: hidden; /* Menyembunyikan teks yang keluar dari area kontainer */
+            white-space: nowrap; /* Jangan biarkan teks membungkus baris baru */
+            width: 100%; /* Lebar kontainer, dapat disesuaikan */
+            /* border: 1px solid #ddd;
+            background-color: #f4f4f4; */
+            padding: 10px; /* Padding opsional untuk jarak dari border */
+            box-sizing: border-box; /* Menyertakan padding dan border dalam lebar total */
+            position: relative;
+            height: auto;
+            border-radius: 100px;
+            top: 150px;
+        }
+
+        .scrolling-text {
+            display: inline-block;
+            padding-left: 100%; /* Memulai animasi di luar area tampilan */
+            animation: scroll-text 30s linear infinite; /* Setelan animasi */
+        }
+
+        @keyframes scroll-text {
+            100% {
+                transform: translateX(100%); /* Mulai di luar area kanan */
+            }
+            100% {
+                transform: translateX(-100%); /* Berakhir di luar area kiri */
+            }
+        }
+
+        .scrolling-text-inner {
+            display: inline-block;
+            padding-right: 100%; /* Tambahkan padding di kanan untuk menghindari terputus */
+        }
+    </style>
+</head>
+<body>
+    <div class="scrolling-text-container">
+        <div class="scrolling-text">
+            <div class="scrolling-text-inner">
+                Jl. Sungai Raya Dalam, Komp. Tanjungpura Permai No. C28, RT.004/RW.003 Kelurahan Sungai Raya Dalam, Kecamatan Sungai Raya, Kabupaten Kubu Raya, Provinsi Kalimantan Barat
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Icon</title>
+  <style>
+    .instagram-icon {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      border-radius: 50%;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      font-size: 24px;
+      line-height: 50px;
+      transition: background 0.3s ease;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    .instagram-icon::before {
+      content: "i";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .instagram-icon:hover {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 80%);
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.instagram.com" class="instagram-icon" target="_blank"></a>
+</body>
+</html>

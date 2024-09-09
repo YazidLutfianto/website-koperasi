@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .counter {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="counter" data-target="1000">0</div>
+        <div class="counter" data-target="500">0</div>
+        <div class="counter" data-target="750">0</div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.counter');
+
+            const updateCount = (element) => {
+                const target = +element.getAttribute('data-target');
+                let count = 0;
+                const interval = setInterval(() => {
+                    if (count >= target) {
+                        clearInterval(interval);
+                        element.textContent = target;
+                    } else {
+                        count += Math.ceil(target / 100); // Adjust the increment value for faster or slower animation
+                        element.textContent = count;
+                    }
+                }, 30); // Adjust the interval time for animation speed
+            };
+
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        updateCount(element);
+                        observer.unobserve(element);
+                    }
+                });
+            }, options);
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        });
+    </script>
+</body>
+</html>

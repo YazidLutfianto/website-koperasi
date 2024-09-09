@@ -1,0 +1,1056 @@
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* --------------------START LOADING MENU------------------ */
+/* .loading {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(39, 108, 255);
+}
+.loading-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background:transparent;
+    border: 3px solid white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 150px;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: rgb(39, 108, 255);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgb(39, 108, 255);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.loading-menu:before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-top: 3px solid rgb(39, 108, 255);
+    border-right: 3px solid rgb(39, 108, 255);
+    border-radius: 50%;
+    animation: animateCircle 2s linier infinite;
+}
+span {
+    display: block;
+    position: relative;
+    top: calc(50% - 2px);
+    left: 50%;
+    width: 50%;
+    height: 4px;
+    background-color: transparent;
+    transform-origin: left;
+    animation: animate 2s linier infinite;
+}
+span:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    top: -6px;
+    right: -8px;
+    box-shadow: 0 0 20px rgb(39, 108, 255);
+}
+@keyframes animateCircle {
+    0%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(360deg);
+    }
+} */
+/* --------------------START LOADING MENU------------------ */
+/* navbar styles */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 3;
+  background: linear-gradient(45deg, #6cffc2, #0041a2, #6cffc2);
+  background-size: 300% 300%;
+  animation: move-bg 6s linear infinite;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+@keyframes move-bg {
+  0% {
+    background-position: 0% 50%; /* Posisi awal background */
+  }
+  50% {
+    background-position: 100% 50%; /* Posisi tengah background */
+  }
+  100% {
+    background-position: 0% 50%; /* Kembali ke posisi awal */
+  }
+}
+
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+nav {
+  align-items: center;
+  display: flex;
+  padding: 0 30px;
+  justify-content: space-between;
+  height: 12vh;
+}
+
+.nav {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav li {
+  margin: auto;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+/* .nav a:hover {
+    background-color: #ddd;
+    color: rgb(34, 34, 34);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+} */
+
+.ham-menu {
+    display: block;
+    position: fixed;
+    top: center;
+    right: 10px;
+    cursor: pointer;
+    border-radius: 7px;
+    z-index: 1001;
+}
+
+.ham-menu:hover {
+    /* border-radius: 7px; */
+    background: linear-gradient(45deg, #6cffc2, #0041a2, #6cffc2);
+    background-size: 300% 300%;
+    animation: move-bg 6s linear infinite;
+    transition: 0.5s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ham-menu span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    background-color: white;
+    margin: 8px 8px;
+    border-radius: 3px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* ------------- Start Hamburger Bar -------------- */
+/* off-screen-menu */
+.off-screen-menu {
+
+    display: block;
+    position: fixed;
+    background-color: rgb(131, 195, 255);
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+.off-screen-menu.active {
+    transform: translateX(0);
+}
+.off-screen-menu ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.off-screen-menu li {
+    margin: 2rem 0;
+}
+
+.off-screen-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.ham-menu.active span:nth-child(1) {
+    transform: translateY(12px)rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+    transform: translateY(-12px) rotate(-45deg);
+}
+
+/* ----- Start Menu Pencarian ----- */
+#searchInput {
+    padding: 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f3f3f3;
+    color: #333;
+    font-size: 16px;
+    outline: none;
+    width: 0;
+    transition: width 0.4s ease-in-out;
+}
+
+#searchInput:focus {
+    width: 200px;
+    background-color: #fff;
+    padding: 10px 20px;
+}
+
+#searchButton {
+    border: none;
+    background-color: transparent;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.4s;
+}
+
+#searchButton:hover {
+    color: #f39c12;
+}
+
+/* Style untuk kotak pencarian */
+.search-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 80px; /*jarak Search dan Hamburger*/
+    display: inline-block;
+}
+
+/* Style untuk input pencarian */
+.search-input {
+    padding: 8px 30px 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 80px;
+    transition: width 0.4s ease-in-out;
+    font-size: 14px;
+}
+
+/* Style untuk tombol pencarian */
+.search-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Style untuk gambar ikon pencarian */
+.search-button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Hover effect untuk tombol pencarian */
+.search-button:hover {
+    color: #333;
+}
+
+
+/* Animasi untuk input pencarian saat aktif */
+.search-input:focus {
+    width: 200px;
+    outline: none;
+}
+/* ----- End Menu Pencarian----- */
+
+/*-------------- Start Sub Menu--------------*/
+
+/* tambahkan gaya untuk submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: rgb(131, 195, 255);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Tampilkan submenu saat hamburger dihover */
+.ham-menu:hover .submenu {
+  display: block;
+}
+
+/* Header content */
+.header {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: #6cffc2;
+}
+
+.header-content {
+  position: absolute;
+  left: 50%;
+  bottom: -100px;
+  transform: translate(-50%, -50%);
+  color: rgb(44, 44, 44);
+  text-align: center;
+  z-index: 2; /* Pastikan konten ada di atas lapisan putih */
+}
+
+.header-content h1 {
+    font-size: 30px;
+    margin: auto;
+}
+
+.header-content p {
+    font-size: 14px;
+    margin: 50px -50px;
+}
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #001f3f;
+    width: 100%;
+    z-index: 999;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .nav a {
+    margin: 5px 0;
+  }
+  
+  .nav.active {
+    transform: translateY(0);
+  }    
+  /* Header content */
+  .header {
+    position: relative;
+    width: 100%;
+    max-height: 50px;
+    background: #6cffc2;
+  }
+  .header-content {
+    position: absolute;
+    /* top: 100vh; */
+    /* width: 80%; */
+
+    bottom: 10%;
+    transform: translateY(-50%, -50%);
+    color: rgb(44, 44, 44);
+    text-align: center;
+    z-index: 10; /* Pastikan konten ada di atas lapisan putih */
+  }
+    
+  .ham-menu {
+    display: block;
+    position: fixed;
+    top: center;
+    right: 10px;
+    z-index: 1001;
+  }
+
+  .ham-menu.active span:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+    border-radius: 3px;
+  }
+  
+  .ham-menu.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .ham-menu.active span:nth-child(3) {
+    transform: translateY(-12px) rotate(-45deg);
+    border-radius: 3px;
+  }
+  
+  .off-screen-menu {
+    display: block;
+  }
+
+  .header-content h1 {
+    font-size: 10px;
+    margin: 10px;
+  }
+
+  .header-content p {
+    font-size: 9px;
+    margin: auto;
+  }
+  .slideshow-container {
+    position: relative;
+    top: 72px; /* Sesuaikan dengan tinggi nav bar Anda */
+    z-index: 1;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+    
+}
+
+/*-------------- End Sub Menu---------------*/
+
+
+
+
+/*--------------- End Hamburger Bar -------------*/
+
+.nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    padding: auto;
+    margin: 0 5px;
+    transition: background-color 0.4s;
+    border-radius: 8px;
+}
+
+.nav a:hover {
+  background-color: #ddd;
+  color: rgb(34, 34, 34);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan di sini */
+}
+
+.slideshow-container {
+  position: relative;
+  top: 0px; /* Sesuaikan dengan tinggi nav bar Anda */
+  z-index: 1; /* Pastikan z-index lebih rendah dari z-index nav bar */
+  margin: auto;
+  width: 100%;
+  aspect-ratio: 16/9;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+
+}
+/* Lapisan putih transparan */
+.slideshow-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.63); /* Warna putih transparan (RGBA) */
+}
+
+.hidden {
+  display: none;
+}
+
+/* ---------------------Hover Slide Show Start----------------------- */
+
+/* Hide all images by default */
+.mySlides {
+  /* position: relative; /* Tambahkan position relative untuk memungkinkan lapisan putih di atasnya */
+  /* display: none;
+  height: 100vh; */
+
+  width: 100%; /* Menyesuaikan lebar kontainer sesuai layar */
+  max-width: 100%; /* Atur lebar maksimum kontainer jika diinginkan */
+  height: 40vh; /* Tinggi kontainer sesuai dengan tampilan yang diinginkan */
+  overflow: hidden; /* Menyembunyikan bagian gambar yang melebihi kontainer */
+  position: relative; /* Untuk menempatkan gambar secara absolut di dalam kontainer */
+}
+
+.mySlides img {
+  width: 100%; /* Menyesuaikan lebar gambar dengan kontainer */
+  height: auto; /* Menjaga aspek rasio gambar */
+  position: absolute; /* Posisi gambar agar bisa diatur */
+  top: 50%; /* Menggeser gambar ke atas agar bagian tengah gambar terlihat */
+  left: 50%; /* Menggeser gambar ke kiri agar bagian tengah gambar terlihat */
+  transform: translate(-50%, -50%); /* Memindahkan gambar agar bagian tengah berada di tengah kontainer */
+}
+/* Set gambar agar responsif */
+.header-content img {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  /* position: center; */
+}
+
+/* Fade in and out effect */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+/* --------------- Footer ---------------- */
+
+footer {
+  background: linear-gradient(to bottom, #6cffc2, #0041a2);
+  color: #fff;
+  /* padding: 20px 0; */
+  text-align: center;
+  /* border-top-left-radius: 50px; */
+  /* border-top-right-radius: 50px; */
+  
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.footer-about,
+.footer-contact,
+.footer-social,
+.footer-map {
+  flex: 1 1 300px;
+  margin: 10px;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-icons a:hover {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  transform: translateY(-10px);
+  transition: 0.5s;
+}
+.social-icons a {
+  margin: 10px;
+  padding: 20px;
+}
+
+.footer-about h3,
+.footer-contact h3,
+.footer-social h3,
+.footer-map h3 {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-contact p,
+.footer-social a {
+  margin: 5px 0;
+}
+
+.footer-social a img {
+  width: 30px;
+  margin: 0 10px;
+}
+
+/* .footer-map-comments {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0px 0;
+  margin-top: 0;
+} */
+
+/* .footer-map {
+  flex: 1;
+  max-width: 300px;
+} */
+
+.footer-map iframe {
+  width: 100%;
+  height: 200px;
+  border: 0;
+  
+}
+
+/* Start Visi-Misi --------------------------- */
+.visi-misi {
+  position: relative;
+  width: 80%;
+  margin: 100px auto;
+}
+.visi-misi-container {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+.visi, .misi {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  position: relative;
+  max-width: 300px;
+  min-width: 200px;
+  height: auto;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 30px;
+  font-size: 1rem;
+  color: #333333;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transform: translateY(50px);
+  background: linear-gradient(45deg, #0041a2, #6cffc2, #0041a2);
+  background-size: 300% 300%;
+  animation: move-bg 6s linear infinite, slideUp 1.5s ease-out forwards;
+}
+.visi-misi h1 {
+  text-align: center;
+  margin: auto;
+}
+.visi-misi-container:nth-child(1){
+  animation-delay: 0.5s;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ---------------- Start Comment Menu ----------------- */
+.footer-comments {
+  flex: 1;
+  max-width: 280px;
+  margin: 10px auto;
+  background: linear-gradient(to top right, rgb(0, 42, 158), rgb(108, 255, 194));
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 50px;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.footer-comments form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-comments textarea {
+  width: 300px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.footer-comments button {
+  width: 100px;
+  padding: 10px;
+  background-color:  rgb(2, 69, 255);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: auto;
+  border-radius: 7px;
+}
+
+.footer-comments button:hover {
+  background-color: #fff;
+  color: rgb(2, 69, 255);
+  transition: 0.5s ease, width 0.5s ease-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#comment-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#comment-list li {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#message-container {
+  margin-top: 10px;
+  padding: 10px;
+  border: 5px solid #ccc;
+  border-radius: 5px;
+}
+
+#comment-form {
+  margin-bottom: 20px;
+}
+
+#comment-input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#comment-list {
+  list-style-type: none;
+  padding: 0;
+  
+}
+
+.comment-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.comment-text {
+  font-weight: bold;
+}
+
+.comment-timestamp {
+  color: #888;
+  font-size: 0.8em;
+}
+
+#popup-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #00ff95;
+  color: #ff1313;
+  padding: 15px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 7;
+}
+
+#popup-notification.show {
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+/* ---------------- End Comment Menu ----------------- */
+/* --------------- Footer ---------------- */
+
+@keyframes fade {
+  from {
+      opacity: 0.4;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Section styling */
+.section {
+    /* padding: 10px 0px; */
+    text-align: center;
+}
+
+.section h2 {
+    font-size: px;
+    margin-bottom: 20px;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service {
+  /* background-color: #a3daff; */
+  flex: 1;
+  min-width: 220px;
+  max-width: 300px;
+  margin: 20px;
+  /* padding: 50px 20px; */
+}
+.icon-service {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  background-color: #6ec5ff;
+  padding: 20px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-top: auto;
+  position: absolute;
+  
+}
+.button-service {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: white;
+  font-size: clamp(12px, 1.5vw, 24px);
+}
+.button-service:hover {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #6ec5ff;
+  color: #fff;
+  /* margin-bottom: 10px; */
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.5s ease;
+  cursor: pointer;
+  
+}
+.service-content {
+  background-color: #bae3ff;
+  height: auto;
+  padding: 60px 20px;
+  border-radius: 20px;
+  margin-left: 70px;
+  margin-top: 70px;
+  margin-bottom: 100px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+.service-contents {
+  background-color: #bae3ff;
+  height: auto;
+  padding: 20px 20px;
+  border-radius: 20px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+.service-content:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.service-content h3 {
+  font-size: clamp(12px, 1.5vw, 32px);
+}
+/* .service:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+} */
+
+/* .service h3 {
+  font-size: 4vh;
+  margin-bottom: 10px;
+} */
+
+.service p {
+  font-size: clamp(10px, 1vw, 24px);
+}
+/* Counter Animation with Intersection Observer --------------------- START */
+.member {
+  background: linear-gradient(to right, #0041a2, #6cffc2);
+  height: auto;
+  width: 90%;
+  padding: 100px 0px;
+  border-top-right-radius: 500px;
+  border-bottom-right-radius: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  left: 0;
+  margin-bottom: 100px;
+}
+.number-member {
+  min-width: 300px;
+  max-width: 500px;
+  height: 100px;
+  margin: auto;
+  border-radius: 100px;
+  top: 0;
+  color: #fff;
+  padding: 20px;
+}
+
+.counter {
+  font-size: 3em;
+  font-weight: bold;
+  margin: 20px;
+  color: #ffffff;
+}
+/* Populer Post --------------------------------------------------------- */
+.populer-post {
+  position: relative;
+  padding: 5px 100px 100px 100px;
+}
+.populer-post p {
+  display: -webkit-box; /* Membuat elemen menjadi kotak fleksibel berbasis WebKit */
+  -webkit-box-orient: vertical; /* Orientasi kotak fleksibel secara vertikal */
+  -webkit-line-clamp: 5; /* Batasi jumlah baris teks */
+  overflow: hidden; /* Sembunyikan teks yang melebihi batas */
+  text-overflow: ellipsis; /* Tampilkan elipsis untuk teks yang terpotong */
+  line-height: 1; /* Jarak antar baris */
+  max-height: 5em; /* Sesuaikan dengan line-height dan jumlah baris */
+}
+.populer-post::before {
+  content: '';
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Ketebalan garis */
+  background: linear-gradient(to right, #007bff 25%, black 25%);
+}
+
+/* Counter Animation with Intersection Observer --------------------- END */
+/* Ubah gaya "Tentang Kami" */
+#about {
+  margin-top: 72px; /* Beri jarak atas */
+  padding: 20px;
+  background-color: #ffffff; /* Warna latar belakang abu-abu muda */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+.visitor {
+  margin: 100px auto;
+  height: 200px;
+  width: 200px;
+}
+.copyright {
+  /* background: linear-gradient(to top, #0041a2, #6cffc2);
+  color: #fff; */
+  text-align: center;
+  padding: 10px 5%;
+  position: relative;
+  width: 90%;
+  bottom: 0px;
+}
+
+/* ----------------- Footer Waves ----------- */
+.wav {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  /* padding: 10px 50px; */
+  display: flex;
+  justify-content: center;
+  /* padding-top: 100px; */
+  /* background: #3586ff;  */
+}
+
+.wave{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(Gambar/waves.png); 
+  background-size: 1000px 100px;
+}
+.wave#wave1 {
+  z-index: 1;
+  /* opacity: 1; */
+  bottom: 0;
+  animation: animateWave1 4s linear infinite;
+
+}
+
+.wave#wave2 {
+  z-index: 1;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animateWave2 4s linear infinite;
+
+}
+.wave#wave3 {
+  z-index: 1;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWave3 3s linear infinite;
+
+}
+.wave#wave4 {
+  z-index: 1;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animateWave4 3s linear infinite;
+
+}
+@keyframes animateWave1  {
+  0%{
+    background-position-x: 1000px;
+  }
+  100%{
+    background-position-x: 0px;
+  }
+}
+
+@keyframes animateWave2  {
+  0%{
+    background-position-x: 0px;
+  }
+  100%{
+    background-position-x: 1000px;
+  }
+}
+
+@keyframes animateWave3  {
+  0%{
+    background-position-x: 1000px;
+  }
+  100%{
+    background-position-x: 0px;
+  }
+}
+
+@keyframes animateWave4  {
+  0%{
+    background-position-x: 1000px;
+  }
+  100%{
+    background-position-x: 0px;
+  }
+}
+
+/* BOOTSTRAP ------------------------- */
+
+.slide-bootstrap {
+  margin-top: 12vh;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 40%; /* Aspect ratio 16:9 */
+  overflow: hidden;
+  background: #000;
+  display: block;
+}
+.slide-bootstrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}

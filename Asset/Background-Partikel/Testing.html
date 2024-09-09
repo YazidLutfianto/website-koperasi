@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bisnis Content with Particles Background</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            background-color: #f0f8ff; /* Warna latar belakang biru muda */
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        nav {
+            background-color: #444;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .content {
+            position: relative;
+            padding: 20px;
+            z-index: 1;
+            background-image: url('../../Gambar/BG/image\ \(1\).png');
+            background-size: cover; /* Mengatur gambar untuk menutupi seluruh elemen */
+            background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+            background-position: center; /* Menempatkan gambar di tengah */
+            /* background-color: #b7dcff; */
+            min-height: 2000px; /*Mengatur tinggi minimum agar konten terlihat */
+        }
+
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Business Website</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="content">
+        <div class="particles-container">
+            <canvas id="particles"></canvas>
+        </div>
+        <div class="konten" 
+            style="position: absolute; padding: 50px; top: 0; bottom: 0; left: 300px; right: 300px; height: auto; background-color: #797979; z-index: 10;"
+        >
+        <h2>Business Content</h2>
+        <p>This is where the business-related content will go. The particles will appear behind this section.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan risus. Nulla facilisi. Vestibulum tincidunt ultricies libero, at cursus purus aliquet eu. Praesent ut pharetra turpis, nec dignissim elit.</p>
+        <p>Morbi ut interdum sapien. Sed sollicitudin, nunc sed suscipit malesuada, metus urna vehicula augue, eget ullamcorper orci nisl vel lacus. Curabitur ut lectus metus.</p>
+        <br>
+        <p>This is where the business-related content will go. The particles will appear behind this section.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan risus. Nulla facilisi. Vestibulum tincidunt ultricies libero, at cursus purus aliquet eu. Praesent ut pharetra turpis, nec dignissim elit.</p>
+        <p>Morbi ut interdum sapien. Sed sollicitudin, nunc sed suscipit malesuada, metus urna vehicula augue, eget ullamcorper orci nisl vel lacus. Curabitur ut lectus metus.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Business Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Particles Canvas
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = document.querySelector('.content').clientHeight;
+
+        let particlesArray = [];
+        const numberOfParticles = 100;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.size > 0.2) this.size -= 0.1;
+            }
+
+            draw() {
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function handleParticles() {
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+
+                if (particlesArray[i].size <= 0.3) {
+                    particlesArray[i].x = Math.random() * canvas.width;
+                    particlesArray[i].y = Math.random() * canvas.height;
+                    particlesArray[i].size = Math.random() * 5 + 1;
+                }
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            handleParticles();
+            requestAnimationFrame(animateParticles);
+        }
+
+        // Inisialisasi dan animasi partikel
+        initParticles();
+        animateParticles();
+
+        // Update canvas size on window resize
+        window.addEventListener('resize', function() {
+            canvas.width = window.innerWidth;
+            canvas.height = document.querySelector('.content').clientHeight;
+        });
+    </script>
+
+</body>
+</html>

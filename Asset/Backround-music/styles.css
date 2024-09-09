@@ -1,0 +1,43 @@
+.music-btn {
+    position: fixed;
+    bottom: 80px;
+    right: 27px;
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    background-color: transparent;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(45deg, #0041a2, #6cffc2);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.music-btn.active {
+    background: linear-gradient(45deg, #0041a2, #6cffc2);
+    animation: hue-rotate 2s infinite alternate;
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+}
+
+.music-btn i {
+    background: linear-gradient(45deg, #0041a2, #6cffc2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.music-btn.active i {
+    background: linear-gradient(45deg, #fff, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #fff;
+}
+
+@keyframes hue-rotate {
+    to {
+        filter: hue-rotate(360deg);
+    }
+}

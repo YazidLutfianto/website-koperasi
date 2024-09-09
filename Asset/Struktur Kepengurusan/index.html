@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struktur Kepengurusan</title>
+    <style>
+        .kepengurusan-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .kepengurusan-section {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .box-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px; /* Menambahkan jarak antar box */
+        }
+
+        .box {
+            width: 30%;
+            padding: 20px;
+            text-align: center;
+            background-color: #f0f0f0;
+            border: 2px solid #0041a2;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        .box img {
+            width: 80%;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .img-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #0041a2;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .box-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .box-content {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="kepengurusan-container">
+    <!-- Section Dewan Penasehat -->
+    <div class="kepengurusan-section">
+        <div class="section-title">Dewan Penasehat</div>
+        <div class="box-container">
+            <div class="box">
+                <div class="img-box">
+                    <img src="foto1.jpg" alt="Penasehat 1">
+                </div>
+                <div class="box-title">Nama Penasehat 1</div>
+                <div class="box-content">Deskripsi singkat atau posisi.</div>
+            </div>
+            <div class="box">
+                <div class="img-box">
+                    <img src="foto2.jpg" alt="Penasehat 2">
+                </div>
+                <div class="box-title">Nama Penasehat 2</div>
+                <div class="box-content">Deskripsi singkat atau posisi.</div>
+            </div>
+            <div class="box">
+                <div class="img box">
+                    <img src="foto3.jpg" alt="Penasehat 3">
+                </div>
+                <div class="box-title">Nama Penasehat 3</div>
+                <div class="box-content">Deskripsi singkat atau posisi.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Dewan Pengurus -->
+    <div class="kepengurusan-section">
+        <div class="section-title">Dewan Pengurus</div>
+        <div class="box-container">
+            <div class="box">
+                <div class="img-box">
+                    <img src="foto4.jpg" alt="Pengurus 1">
+                </div>
+                <div class="box-title">Nama Pengurus 1</div>
+                <div class="box-content">Deskripsi singkat atau posisi.</div>
+            </div>
+            <div class="box">
+                <img src="foto5.jpg" alt="Pengurus 2">
+                <div class="box-title">Nama Pengurus 2</div>
+                <div class="box-content">Deskripsi singkat atau posisi.</div>
+            </div>
+            <div class="box">
+                <img src="foto6.jpg" alt="Pengurus 3">
+                <div class="box-title">Nama Pengurus 3</div>
+                <div class="box-content">Deskripsi singkat atau posisi.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

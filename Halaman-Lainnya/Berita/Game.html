@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papan Permainan Bisnis Kecil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .board {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: #333;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle {
+            position: relative;
+            width: 90%;
+            height: 90%;
+        }
+
+        .cell {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: #FF0000;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            transition: transform 0.4s ease;
+        }
+
+        .cell.income {
+            background-color: green;
+        }
+
+        .cell.offer {
+            background-color: blue;
+        }
+
+        .player {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: black;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+            z-index: 10;
+            transition: transform 0.4s ease;
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            color: black;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 10px;
+            white-space: nowrap;
+            display: none;
+        }
+
+        .cell:hover .tooltip {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="board">
+        <div id="gameBoard" class="circle">
+            <!-- Sel-sel akan ditambahkan oleh JavaScript -->
+        </div>
+        <div id="player" class="player">P</div>
+    </div>
+    <script>
+        const numCells = 24;
+        const player = document.getElementById('player');
+        let playerPosition = 0;
+
+        function createCells() {
+            const gameBoard = document.getElementById('gameBoard');
+            for (let i = 0; i < numCells; i++) {
+                const angle = (i / numCells) * 360;
+                const cell = document.createElement('div');
+                cell.className = 'cell';
+
+                // Tambahkan kelas khusus berdasarkan posisi
+                if ([2, 8, 14].includes(i)) {
+                    cell.classList.add('income');
+                    cell.innerHTML = '<i class="fas fa-dollar-sign"></i>';
+                } else if ([5, 11, 17].includes(i)) {
+                    cell.classList.add('offer');
+                    cell.innerHTML = '<i class="fas fa-handshake"></i>';
+                } else {
+                    cell.innerHTML = '<i class="fas fa-question"></i>';
+                }
+
+                // Tooltip untuk menjelaskan sel
+                const tooltip = document.createElement('div');
+                tooltip.className = 'tooltip';
+                if (cell.classList.contains('income')) {
+                    tooltip.textContent = 'Income';
+                } else if (cell.classList.contains('offer')) {
+                    tooltip.textContent = 'Offer';
+                } else {
+                    tooltip.textContent = 'Random Event';
+                }
+                cell.appendChild(tooltip);
+
+                // Posisi sel
+                cell.style.transform = `rotate(${angle}deg) translate(160px) rotate(-${angle}deg)`;
+                gameBoard.appendChild(cell);
+            }
+        }
+
+        function movePlayer(steps) {
+            playerPosition = (playerPosition + steps) % numCells;
+            const angle = (playerPosition / numCells) * 360;
+            player.style.transform = `rotate(${angle}deg) translate(160px) rotate(-${angle}deg)`;
+        }
+
+        // Inisialisasi papan permainan
+        createCells();
+
+        // Contoh pergerakan pion
+        setInterval(() => {
+            movePlayer(1);
+        }, 1000);
+    </script>
+</body>
+</html>

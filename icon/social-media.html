@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Icons Animation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <style>
+    /* body {
+      background-color: rgba(0, 181, 245, 0.05);
+    } */
+
+    .social-container {
+      /* width: 400px;
+      margin: 40vh auto; */
+
+      text-align: center;
+      /* overflow: hidden; */
+    }
+
+    .social-icons {
+      padding: 0;
+      list-style: none;
+      margin: 1em;
+    }
+
+    .social-icons li {
+      display: inline-block;
+      margin: 0.15em;
+      position: relative;
+      font-size: 1.2em;
+    }
+
+    .social-icons i {
+      color: #fff;
+      position: absolute;
+      top: 11px;
+      left: 11px;
+      transition: all 265ms ease-out;
+    }
+
+    .social-icons a {
+      display: inline-block;
+    }
+
+    .social-icons a:before {
+      content: " ";
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      display: block;
+      background: linear-gradient(45deg, #6cffc2, #0041a2);
+      transition: all 265ms ease-out;
+      transform: scale(1);
+    }
+
+    .social-icons a:hover:before {
+      transform: scale(0);
+      transition: all 265ms ease-in;
+    }
+
+    .social-icons a:hover i {
+      transform: scale(1.8);
+      background: linear-gradient(45deg, #0041a2, #6cffc2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: all 265ms ease-in;
+    }
+  </style>
+</head>
+<body>
+  <div class="social-container">
+    <ul class="social-icons">
+      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      <!-- <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="#"><i class="fab fa-codepen"></i></a></li> -->
+      <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+      <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
+    </ul>
+  </div>
+</body>
+</html>

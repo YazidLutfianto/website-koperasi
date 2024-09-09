@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Styling untuk tombol panah */
+.toggle-button {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(to right top, #0041a2, #6cffc2);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease;
+  z-index: 1000;
+}
+
+/* Styling untuk ikon panah */
+.arrow {
+  color: white;
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Styling untuk panah mengarah ke bawah */
+.arrow.down {
+  transform: rotate(0deg);
+}
+
+/* Styling untuk panah mengarah ke atas */
+.arrow.up {
+  transform: rotate(180deg);
+}
+
+/* Animasi untuk perubahan latar belakang gradien */
+@keyframes gradientShift {
+  0% {
+    background: linear-gradient(to right top, #0041a2, #6cffc2);
+  }
+  100% {
+    background: linear-gradient(to right top, #6cffc2, #0041a2);
+  }
+}
+
+/* Efek hover dengan animasi gradien */
+.toggle-button:hover {
+  animation: gradientShift 0.5s ease-in-out forwards;
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .toggle-button {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(to right top, #0041a2, #6cffc2);
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease;
+    z-index: 1000;
+  }
+
+  .arrow {
+    color: white;
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave and Ship Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content"></div>
+    
+    <div class="wav">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="ship-container">
+                <div class="ship">
+                    <img src="https://www.pngmart.com/files/12/Vessel-PNG-Transparent-HD-Photo.png" alt="Ship">
+                </div>
+            </div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+    </div>
+    
+    <footer>  
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>Koperasi Wirausaha Reka Nusantara</h3>
+                <p>Meningkatkan kesejahteraan anggota melalui usaha bersama.</p>
+            </div>
+            <div class="footer-contact">
+                <h3 id="contact">Kontak Kami</h3>
+                <p>Email: <a href="mailto:info@koperasiwirausaha.com">info@koperasiwirausaha.com</a></p>
+                <p>Telp: <a href="tel:+628123456789">+62 812-3456-789</a></p>
+                <p>Alamat: Jl. Sungai Raya Dalam, Komp. Tanjungpura Permai No. C28, RT.004/RW.003 Kelurahan Sungai Raya Dalam, Kecamatan Sungai Raya, Kabupaten Kubu Raya, Provinsi Kalimantan Barat</p>
+            </div>
+            <div class="footer-social">
+                <h3>Ikuti Kami</h3>
+                <div class="social-icons">
+                    <iframe src="../../icon/social-media.html" width="400" height="200" style="border: none; overflow: hidden;"></iframe>
+                </div>
+            </div>
+            <div class="footer-map">
+                <h3>Lokasi Sekretariat</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d15959.255908654217!2d109.34269982737955!3d-0.08454053729726776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMDUnMDQuNCJTIDEwOcKwMjEnNDAuMiJF!5e0!3m2!1sid!2sid!4v1719303243818!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Hak cipta &copy; <span id="currentYear"></span> Koperasi Wiranusa. Semua hak dilindungi undang-undang.</p>
+            <script>
+                document.getElementById("currentYear").textContent = new Date().getFullYear();
+            </script>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

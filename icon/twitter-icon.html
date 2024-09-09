@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitter Icon</title>
+  <style>
+    .twitter-icon {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-color: #1DA1F2;
+      border-radius: 50%;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      font-size: 24px;
+      line-height: 50px;
+      transition: background-color 0.3s ease;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    .twitter-icon::before {
+      content: "t";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .twitter-icon:hover {
+      background-color: #0d95e8;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.twitter.com" class="twitter-icon" target="_blank"></a>
+</body>
+</html>

@@ -1,0 +1,176 @@
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.content {
+    height: 2000px;
+}
+
+.wav {
+  position: relative;
+  width: 100%;
+  min-height: 100px; /* Adjust this to fit your design */
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* Ensure nothing overflows */
+}
+
+.waves {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100px;
+  background: url(../../Gambar/waves.png);
+  background-size: 1000px 100px; /* Assuming this is your wave image size */
+  background-repeat: repeat-x;
+}
+
+.wave#wave1 {
+  z-index: 1;
+  animation: animateWave1 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 1;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animateWave2 4s linear infinite;
+}
+
+.wave#wave3 {
+  z-index: 1;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWave3 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 1;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animateWave4 3s linear infinite;
+}
+
+@keyframes animateWave1 {
+  0% { background-position-x: 1000px; }
+  100% { background-position-x: 0px; }
+}
+
+@keyframes animateWave2 {
+  0% { background-position-x: 0px; }
+  100% { background-position-x: 1000px; }
+}
+
+@keyframes animateWave3 {
+  0% { background-position-x: 1000px; }
+  100% { background-position-x: 0px; }
+}
+
+@keyframes animateWave4 {
+  0% { background-position-x: 1000px; }
+  100% { background-position-x: 0px; }
+}
+
+.ship-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px; /* Adjust size as needed */
+  height: 100px; /* Adjust height as needed */
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.ship {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: shipAnimation 6s ease-in-out infinite;
+}
+
+.ship img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes shipAnimation {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(-2deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+footer {
+  position: relative;
+  background: linear-gradient(to bottom, #6cffc2, #0041a2);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  z-index: 2;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.footer-about,
+.footer-contact,
+.footer-social,
+.footer-map {
+  flex: 1 1 300px;
+  margin: 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-icons a:hover {
+  transform: translateY(-10px);
+  transition: 0.5s;
+}
+
+.footer-about h3,
+.footer-contact h3,
+.footer-social h3,
+.footer-map h3 {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-contact p,
+.footer-social a {
+  margin: 5px 0;
+}
+
+.footer-social a img {
+  width: 30px;
+  margin: 0 10px;
+}
+
+.footer-map iframe {
+  width: 100%;
+  height: 200px;
+  border: 0;
+}
